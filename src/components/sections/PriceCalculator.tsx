@@ -4,12 +4,12 @@ import { MapPin, Users, ArrowRight, MessageCircle, ChevronDown } from "lucide-re
 import { WHATSAPP_NUMBER } from "@/lib/utils";
 
 const DESTINATIONS = [
-  { label: "Miraflores", price: 70, usd: 19 },
-  { label: "San Isidro", price: 70, usd: 19 },
-  { label: "Barranco", price: 75, usd: 20 },
-  { label: "Surco / Surquillo", price: 80, usd: 22 },
-  { label: "La Molina / San Borja", price: 85, usd: 23 },
-  { label: "Chorrillos", price: 80, usd: 22 },
+  { label: "Miraflores", price: 75, usd: 23 },
+  { label: "San Isidro", price: 75, usd: 23 },
+  { label: "Barranco", price: 80, usd: 25 },
+  { label: "Surco / Surquillo", price: 85, usd: 27 },
+  { label: "La Molina / San Borja", price: 90, usd: 25 },
+  { label: "Chorrillos", price: 90, usd: 25 },
   { label: "Other / Otro", price: null, usd: null },
 ];
 
