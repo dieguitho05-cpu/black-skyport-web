@@ -7,8 +7,8 @@ const prices = [
   {
     routeEs: "Aeropuerto ↔ Miraflores",
     routeEn: "Airport ↔ Miraflores",
-    price: "70",
-    usdPrice: "~$19 USD"
+    price: "75",
+    usdPrice: "~$23 USD"
   },
   {
     routeEs: "Aeropuerto ↔ San Isidro",
