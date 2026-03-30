@@ -13,14 +13,14 @@ const prices = [
   {
     routeEs: "Aeropuerto ↔ San Isidro",
     routeEn: "Airport ↔ San Isidro",
-    price: "70",
-    usdPrice: "~$19 USD"
+    price: "75",
+    usdPrice: "~$23 USD"
   },
   {
     routeEs: "Servicio por Hora",
     routeEn: "Per Hour Service",
     price: "40",
-    usdPrice: "~$11 USD"
+    usdPrice: "~$12 USD"
   }
 ];
 
