@@ -1,37 +1,21 @@
 {
   "compilerOptions": {
-    "isolatedModules": true,
+    "target": "ES2020",
+    "useDefineForClassFields": true,
     "lib": [
-      "es2022",
-      "esnext",
-      "dom",
-      "dom.iterable"
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
     ],
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": false,
-    "noImplicitReturns": true,
-    "noUnusedLocals": false,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": false,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "useUnknownInCatchVariables": true,
-    "alwaysStrict": true,
+    "module": "ESNext",
     "skipLibCheck": true,
-    "target": "es2022",
-    "noEmit": true,
-    "jsx": "preserve",
-    "resolveJsonModule": true,
+    "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "types": [
-      "node",
-      "vite/client"
-    ],
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
     "paths": {
       "@/*": [
         "./src/*"
@@ -39,12 +23,9 @@
     }
   },
   "include": [
-    "src/**/*"
+    "src"
   ],
   "exclude": [
-    "node_modules",
-    "build",
-    "dist",
-    "**/*.test.ts"
+    "node_modules"
   ]
 }

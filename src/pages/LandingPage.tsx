@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { PriceCalculator } from "@/components/sections/PriceCalculator";
+import { Pricing } from "@/components/sections/Pricing";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { BookingForm } from "@/components/sections/BookingForm";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -125,6 +126,7 @@ export default function LandingPage() {
         <Hero />
         <ServiceCards />
         <PriceCalculator />
+        <Pricing />
         <WhyUs />
         <Testimonials />
         <BookingForm />

@@ -4,12 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --config vite.config.ts --host 0.0.0.0",
+    "dev": "vite",
     "build": "vite build --config vite.config.render.ts",
-    "build:render": "vite build --config vite.config.render.ts",
-    "serve": "vite preview --config vite.config.render.ts --host 0.0.0.0",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
-    "preview:render": "vite preview --config vite.config.render.ts --host 0.0.0.0"
+    "serve": "vite preview --host 0.0.0.0"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

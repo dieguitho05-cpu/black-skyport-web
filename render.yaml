@@ -2,7 +2,7 @@ services:
   - type: web
     name: black-skyport
     runtime: static
-    buildCommand: npm install && npm run build:render
+    buildCommand: npm install && npx vite build --config vite.config.render.ts
     staticPublishPath: ./dist
     routes:
       - type: rewrite

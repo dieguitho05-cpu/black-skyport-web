@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
-// Render-optimized config: no Replit plugins, no strict env var requirements
 export default defineConfig({
   base: "/",
   plugins: [react(), tailwindcss()],
