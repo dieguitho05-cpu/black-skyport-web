@@ -19,7 +19,7 @@ export function Footer() {
           <div>
             <div className="mb-4 h-16 w-56 overflow-hidden rounded-sm">
               <img
-                src={`${import.meta.env.BASE_URL}images/logo-black-skyport.png`}
+                src={`${import.meta.env.BASE_URL}images/logo-pro.png`}
                 alt="Black Skyport"
                 className="w-full h-full object-cover object-center"
               />

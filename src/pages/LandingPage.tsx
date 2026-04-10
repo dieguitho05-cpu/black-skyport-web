@@ -1,56 +1,83 @@
-import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
-import { PriceCalculator } from "@/components/sections/PriceCalculator";
+import { TrustBlock } from "@/components/sections/TrustBlock";
+import { QuickPrices } from "@/components/sections/QuickPrices";
+import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Pricing } from "@/components/sections/Pricing";
 import { WhyUs } from "@/components/sections/WhyUs";
-import { BookingForm } from "@/components/sections/BookingForm";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { BookingForm } from "@/components/sections/BookingForm";
 import { Footer } from "@/components/sections/Footer";
 import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
 import { getWhatsAppUrl } from "@/lib/utils";
-import { MessageCircle, Plane, Map, Clock } from "lucide-react";
+import { MessageCircle, Plane, Map, Clock, Zap } from "lucide-react";
+
+function MidCTA() {
+  return (
+    <section className="py-10 px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="max-w-2xl mx-auto bg-[#25D366]/10 border border-[#25D366]/30 rounded-3xl p-8 text-center"
+      >
+        <span className="inline-flex items-center gap-2 text-yellow-400 text-sm font-bold mb-3">
+          <Zap className="w-4 h-4" /> Quick response · Usually replies in minutes
+        </span>
+        <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">
+          Ready to book your ride?
+        </h3>
+        <p className="text-white/50 text-sm mb-6">
+          No forms, no wait. Just send a WhatsApp message and confirm instantly.
+        </p>
+        <a
+          href={getWhatsAppUrl(`Hello, I need an airport transfer in Lima.\nPickup: \nDrop-off: \nDate: \nTime: \nPassengers: `)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 bg-[#25D366] text-white font-extrabold text-lg px-10 py-4 rounded-2xl shadow-[0_0_32px_rgba(37,211,102,0.4)] hover:bg-[#1ebe5d] hover:scale-105 active:scale-95 transition-all duration-200"
+        >
+          <MessageCircle className="w-6 h-6" />
+          Contact on WhatsApp
+        </a>
+      </motion.div>
+    </section>
+  );
+}
 
 const SERVICES = [
   {
-    href: "/airport-transfers",
     icon: <Plane className="w-7 h-7 text-primary" />,
-    title: "Airport Transfers",
-    titleEs: "Traslados Aeropuerto",
-    desc: "Fixed rates from Jorge Chávez Airport to any district in Lima. Flight tracking included.",
-    descEs: "Tarifas fijas desde el aeropuerto. Seguimiento de vuelo incluido.",
-    cta: "View Prices →",
-    img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80",
-    whatsapp: "Hello! I need an airport transfer in Lima.",
+    title: "Airport Transfer",
+    titleEs: "Traslado al Aeropuerto",
+    desc: "Pickup & drop-off at Jorge Chávez. Flight tracking included. Fixed price.",
+    descEs: "Recojo y entrega en el aeropuerto Jorge Chávez. Seguimiento de vuelo incluido.",
+    img: "/images/service-airport.jpg",
+    msg: `Hello, I need an airport transfer in Lima.\nPickup: \nDrop-off: \nDate: \nTime: \nPassengers: `,
   },
   {
-    href: "/tourist-services",
-    icon: <Map className="w-7 h-7 text-primary" />,
-    title: "Tourist Services",
-    titleEs: "Servicios Turísticos",
-    desc: "Private day trips to Huacachina, Paracas, Nazca and City Tours in Lima. Your schedule.",
-    descEs: "Excursiones privadas a Huacachina, Paracas, Nazca y City Tour Lima.",
-    cta: "See Tours →",
-    img: "https://images.unsplash.com/photo-1521729839347-1b5c4ca63168?w=600&q=80",
-    whatsapp: "Hello! I want to book a tourist tour from Lima.",
-  },
-  {
-    href: "/hourly-service",
     icon: <Clock className="w-7 h-7 text-primary" />,
-    title: "Hourly Service",
-    titleEs: "Servicio por Horas",
-    desc: "Private driver by the hour for meetings, shopping or exploring Lima at your own pace.",
-    descEs: "Conductor privado por horas para reuniones, compras o turismo a tu ritmo.",
-    cta: "See Packages →",
-    img: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80",
-    whatsapp: "Hello! I need a private driver by the hour in Lima.",
+    title: "City Rides",
+    titleEs: "Transporte por Horas",
+    desc: "Private driver by the hour for meetings, shopping or exploring Lima at your pace.",
+    descEs: "Conductor privado por horas para reuniones, compras o turismo en Lima.",
+    img: "/images/service-driver.jpg",
+    msg: `Hello, I need a private driver by the hour in Lima.\nDate: \nHours needed: \nPlaces to visit: \nPassengers: `,
+  },
+  {
+    icon: <Map className="w-7 h-7 text-primary" />,
+    title: "Tours",
+    titleEs: "Tours desde Lima",
+    desc: "Private day trips to Huacachina, Paracas and Lima City Tour. Your schedule, your pace.",
+    descEs: "Excursiones privadas a Huacachina, Paracas y City Tour Lima.",
+    img: "/images/tour-huacachina.jpg",
+    msg: `Hello, I want to book a tour from Lima.\nDestination: \nDate: \nPassengers: \nAdditional info: `,
   },
 ];
 
 function ServiceCards() {
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto">
+    <section id="services" className="py-16 px-4 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -66,14 +93,13 @@ function ServiceCards() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {SERVICES.map((s, i) => (
           <motion.div
-            key={s.href}
+            key={s.title}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
             className="group relative bg-white/3 border border-white/10 rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-300 flex flex-col"
           >
-            {/* Image */}
             <div className="relative h-44 overflow-hidden">
               <img
                 src={s.img}
@@ -87,27 +113,21 @@ function ServiceCards() {
               </div>
             </div>
 
-            {/* Content */}
             <div className="p-5 flex flex-col flex-1">
               <h3 className="text-lg font-bold text-white mb-0.5">{s.title}</h3>
               <p className="text-xs text-primary/80 italic mb-3">{s.titleEs}</p>
               <p className="text-sm text-muted-foreground leading-relaxed mb-1">{s.desc}</p>
               <p className="text-xs text-muted-foreground/50 italic mb-5">{s.descEs}</p>
 
-              <div className="mt-auto flex gap-2">
-                <Link
-                  href={s.href}
-                  className="flex-1 text-center py-2.5 rounded-xl bg-primary/10 border border-primary/30 text-primary text-sm font-semibold hover:bg-primary hover:text-black transition-all"
-                >
-                  {s.cta}
-                </Link>
+              <div className="mt-auto">
                 <a
-                  href={getWhatsAppUrl(s.whatsapp)}
+                  href={getWhatsAppUrl(s.msg)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all"
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] font-bold text-sm hover:bg-[#25D366] hover:text-white transition-all"
                 >
                   <MessageCircle className="w-4 h-4" />
+                  Contact on WhatsApp
                 </a>
               </div>
             </div>
@@ -124,8 +144,11 @@ export default function LandingPage() {
       <Navbar />
       <main>
         <Hero />
+        <TrustBlock />
         <ServiceCards />
-        <PriceCalculator />
+        <QuickPrices />
+        <HowItWorks />
+        <MidCTA />
         <Pricing />
         <WhyUs />
         <Testimonials />

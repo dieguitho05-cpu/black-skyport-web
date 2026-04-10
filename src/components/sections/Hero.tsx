@@ -13,7 +13,7 @@ export function Hero() {
     <section className="relative min-h-[100svh] flex items-center pt-20 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src={`${import.meta.env.BASE_URL}images/hero-bg.png`}
+          src={`${import.meta.env.BASE_URL}images/hero-bg.jpg`}
           alt="Private transport Lima"
           className="w-full h-full object-cover opacity-40"
         />
@@ -24,7 +24,7 @@ export function Hero() {
       {/* Vehicle image */}
       <div className="absolute bottom-0 right-0 w-1/2 h-2/3 z-0 hidden lg:block pointer-events-none">
         <img
-          src={`${import.meta.env.BASE_URL}images/vehicle.png`}
+          src={`${import.meta.env.BASE_URL}images/vehicle.jpg`}
           alt="Black Skyport luxury vehicle"
           className="w-full h-full object-contain object-right-bottom opacity-80"
           style={{ maskImage: "linear-gradient(to left, rgba(0,0,0,0.9) 40%, transparent 100%)" }}

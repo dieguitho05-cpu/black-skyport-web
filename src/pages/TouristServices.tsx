@@ -69,7 +69,7 @@ export default function TouristServices() {
               className="group rounded-3xl overflow-hidden relative min-h-[500px] flex flex-col justify-end"
             >
               <img 
-                src="https://images.unsplash.com/photo-1521729839347-1b5c4ca63168?w=800&q=80" 
+                src="/images/tour-huacachina.jpg" 
                 alt="Huacachina" 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
@@ -108,7 +108,7 @@ export default function TouristServices() {
               className="group rounded-3xl overflow-hidden relative min-h-[500px] flex flex-col justify-end"
             >
               <img 
-                src="https://images.unsplash.com/photo-1547566348-bd7b4a23bc90?w=800&q=80" 
+                src="/images/tour-paracas.jpg" 
                 alt="Paracas" 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
@@ -152,28 +152,28 @@ export default function TouristServices() {
                 title: "City Tour Lima 🏛️",
                 desc: "Explore Miraflores, Barranco, Plaza Mayor, Catedral, Parque del Amor and more",
                 dur: "4–6 hours | Private transport",
-                img: "https://images.unsplash.com/photo-1597576135440-7f617b3b3a3a?w=800&q=80",
+                img: "/images/tour-lima.jpg",
                 msg: "Hello! I want to book the Lima City Tour"
               },
               {
                 title: "Ica Desert Tours 🌵",
                 desc: "Explore the mysterious Ica desert, visit wineries, and experience the local culture",
                 dur: "Full Day",
-                img: "https://images.unsplash.com/photo-1608392543861-c8ae0f8b5f31?w=800&q=80",
+                img: "/images/tour-huacachina.jpg",
                 msg: "Hello! I want to book the Ica tour"
               },
               {
                 title: "Nazca Lines ✈️",
                 desc: "See the enigmatic Nazca Lines from the air. Transport from Lima to Nazca included.",
                 dur: "Full Day (long trip)",
-                img: "https://images.unsplash.com/photo-1548625149-720754002647?w=800&q=80",
+                img: "/images/tour-nazca.jpg",
                 msg: "Hello! I want to book the Nazca Lines tour"
               },
               {
                 title: "Lima Food Tour 🍽️",
                 desc: "Private transport to Lima's world-class restaurants: Central, Maido, La Mar, Isolina and more.",
                 dur: "Transport + recommendations only — not a guided tour",
-                img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+                img: "/images/tour-lima.jpg",
                 msg: "Hello! I want to book the Lima Food Tour transport",
                 note: true
               }

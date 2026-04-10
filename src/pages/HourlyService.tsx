@@ -47,115 +47,132 @@ export default function HourlyService() {
         </div>
       </section>
 
-      {/* Packages */}
+      {/* Pricing by Vehicle */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            
-            {/* 3 Hours */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-3">Price per Hour</h2>
+            <p className="text-muted-foreground">Choose your vehicle — billed by the hour, minimum 2 hours</p>
+            <div className="w-20 h-1 bg-primary mx-auto rounded-full mt-4" />
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+
+            {/* Auto / Sedan */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-card border border-white/5 rounded-3xl p-8 flex flex-col h-full"
+              className="bg-card border border-white/5 rounded-3xl p-8 flex flex-col"
             >
-              <h3 className="text-2xl font-bold text-white mb-2">3 Hours</h3>
+              <div className="text-4xl mb-4">🚗</div>
+              <h3 className="text-2xl font-bold text-white mb-1">Auto / Sedan</h3>
+              <p className="text-muted-foreground text-sm mb-6">Up to 3 passengers · Ideal for city rides</p>
               <div className="mb-6">
-                <span className="text-4xl font-display font-bold text-primary">S/ 120</span>
-                <span className="text-muted-foreground ml-2">~$33 USD</span>
+                <span className="text-5xl font-display font-bold text-primary">S/ 40</span>
+                <span className="text-white/50 text-lg ml-2">/ hora</span>
               </div>
-              <ul className="space-y-4 mb-8 flex-1">
-                {[
-                  "3 hours with driver",
-                  "Up to 3 stops",
-                  "Miraflores area",
-                  "Ideal for meetings or shopping"
-                ].map((feat, i) => (
-                  <li key={i} className="flex items-start gap-3 text-white/80">
-                    <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" /> <span>{feat}</span>
+              <div className="bg-white/5 rounded-2xl p-4 mb-8 space-y-2 text-sm text-white/70">
+                <div className="flex justify-between"><span>2 horas</span><span className="text-white font-semibold">S/ 80</span></div>
+                <div className="flex justify-between"><span>4 horas</span><span className="text-white font-semibold">S/ 160</span></div>
+                <div className="flex justify-between"><span>8 horas (full day)</span><span className="text-white font-semibold">S/ 320</span></div>
+              </div>
+              <ul className="space-y-3 mb-8 flex-1">
+                {["Professional driver","Flexible stops","All Lima","English support"].map((f, i) => (
+                  <li key={i} className="flex items-center gap-3 text-white/80 text-sm">
+                    <Check className="w-4 h-4 text-primary shrink-0" /> {f}
                   </li>
                 ))}
               </ul>
               <a
-                href={getWhatsAppUrl("Hello! I want to book 3 hours of private driver service")}
+                href={getWhatsAppUrl("Hola! Quiero cotizar el servicio por horas en Auto/Sedan. ¿Pueden darme más información?")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-4 rounded-xl border border-primary text-primary font-bold text-center hover:bg-primary hover:text-primary-foreground transition-colors block"
               >
-                Book 3 Hours
+                Book Auto — S/40/hr
               </a>
             </motion.div>
 
-            {/* 5 Hours */}
+            {/* Camioneta / SUV */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.97 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-[#111] border-2 border-primary rounded-3xl p-8 flex flex-col h-full relative transform md:-translate-y-4 shadow-2xl shadow-primary/20"
+              className="bg-[#111] border-2 border-primary rounded-3xl p-8 flex flex-col relative md:-translate-y-4 shadow-2xl shadow-primary/20"
             >
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-bold tracking-widest">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-bold tracking-widest whitespace-nowrap">
                 MOST POPULAR
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2 mt-2">5 Hours</h3>
+              <div className="text-4xl mb-4 mt-2">🚙</div>
+              <h3 className="text-2xl font-bold text-white mb-1">Camioneta / SUV</h3>
+              <p className="text-muted-foreground text-sm mb-6">Up to 6 passengers · Comfort & space</p>
               <div className="mb-6">
-                <span className="text-5xl font-display font-bold text-primary">S/ 180</span>
-                <span className="text-muted-foreground ml-2">~$49 USD</span>
+                <span className="text-5xl font-display font-bold text-primary">S/ 50</span>
+                <span className="text-white/50 text-lg ml-2">/ hora</span>
               </div>
-              <ul className="space-y-4 mb-8 flex-1">
-                {[
-                  "5 hours with driver",
-                  "Multiple stops",
-                  "All Lima",
-                  "Ideal for airport + meetings + hotel"
-                ].map((feat, i) => (
-                  <li key={i} className="flex items-start gap-3 text-white/90">
-                    <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" /> <span>{feat}</span>
+              <div className="bg-white/5 rounded-2xl p-4 mb-8 space-y-2 text-sm text-white/70">
+                <div className="flex justify-between"><span>2 horas</span><span className="text-white font-semibold">S/ 100</span></div>
+                <div className="flex justify-between"><span>4 horas</span><span className="text-white font-semibold">S/ 200</span></div>
+                <div className="flex justify-between"><span>8 horas (full day)</span><span className="text-white font-semibold">S/ 400</span></div>
+              </div>
+              <ul className="space-y-3 mb-8 flex-1">
+                {["Professional driver","Flexible stops","All Lima","English support","More luggage space"].map((f, i) => (
+                  <li key={i} className="flex items-center gap-3 text-white/90 text-sm">
+                    <Check className="w-4 h-4 text-primary shrink-0" /> {f}
                   </li>
                 ))}
               </ul>
               <a
-                href={getWhatsAppUrl("Hello! I want to book 5 hours of private driver service")}
+                href={getWhatsAppUrl("Hola! Quiero cotizar el servicio por horas en Camioneta/SUV. ¿Pueden darme más información?")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-bold text-center hover:opacity-90 transition-opacity block"
               >
-                Book 5 Hours
+                Book SUV — S/50/hr
               </a>
             </motion.div>
 
-            {/* 8 Hours */}
+            {/* Ejecutivo Premium Deluxe */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-card border border-white/5 rounded-3xl p-8 flex flex-col h-full"
+              className="bg-card border border-white/5 rounded-3xl p-8 flex flex-col"
             >
-              <h3 className="text-2xl font-bold text-white mb-2">8 Hours / Full Day</h3>
+              <div className="text-4xl mb-4">👑</div>
+              <h3 className="text-2xl font-bold text-white mb-1">Ejecutivo Premium</h3>
+              <p className="text-muted-foreground text-sm mb-6">Luxury service · Deluxe experience</p>
               <div className="mb-6">
-                <span className="text-4xl font-display font-bold text-primary">S/ 280</span>
-                <span className="text-muted-foreground ml-2">~$76 USD</span>
+                <span className="text-5xl font-display font-bold text-primary">S/ 60</span>
+                <span className="text-white/50 text-lg ml-2">/ hora</span>
               </div>
-              <ul className="space-y-4 mb-8 flex-1">
-                {[
-                  "8 hours with driver",
-                  "Unlimited stops",
-                  "All Lima + nearby",
-                  "Ideal for full-day tourism or business"
-                ].map((feat, i) => (
-                  <li key={i} className="flex items-start gap-3 text-white/80">
-                    <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" /> <span>{feat}</span>
+              <div className="bg-white/5 rounded-2xl p-4 mb-8 space-y-2 text-sm text-white/70">
+                <div className="flex justify-between"><span>2 horas</span><span className="text-white font-semibold">S/ 120</span></div>
+                <div className="flex justify-between"><span>4 horas</span><span className="text-white font-semibold">S/ 240</span></div>
+                <div className="flex justify-between"><span>8 horas (full day)</span><span className="text-white font-semibold">S/ 480</span></div>
+              </div>
+              <ul className="space-y-3 mb-8 flex-1">
+                {["Premium vehicle","VIP driver","All Lima & beyond","English speaking","Deluxe comfort & privacy"].map((f, i) => (
+                  <li key={i} className="flex items-center gap-3 text-white/80 text-sm">
+                    <Check className="w-4 h-4 text-primary shrink-0" /> {f}
                   </li>
                 ))}
               </ul>
               <a
-                href={getWhatsAppUrl("Hello! I want to book 8 hours / full day private driver service")}
+                href={getWhatsAppUrl("Hola! Quiero cotizar el servicio por horas en Ejecutivo Premium Deluxe. ¿Pueden darme más información?")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-4 rounded-xl border border-primary text-primary font-bold text-center hover:bg-primary hover:text-primary-foreground transition-colors block"
               >
-                Book Full Day
+                Book Premium — S/60/hr
               </a>
             </motion.div>
 
