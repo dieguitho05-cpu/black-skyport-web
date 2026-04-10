@@ -49,9 +49,9 @@ export function Navbar() {
         <Link href="/" className="flex items-center shrink-0">
           <div className="h-11 w-44 overflow-hidden rounded-sm">
             <img
-              src={`${import.meta.env.BASE_URL}images/logo-black-skyport.png`}
+              src={`${import.meta.env.BASE_URL}images/logo-pro.png`}
               alt="Black Skyport"
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-contain object-left"
             />
           </div>
         </Link>
@@ -84,12 +84,17 @@ export function Navbar() {
             {lang === "EN" ? "ES" : "EN"}
           </button>
 
-          {/* Book Now */}
-          <Link href="/contact">
-            <Button className="hidden sm:flex bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-5 py-2 text-sm rounded-lg">
+          {/* Book Now → WhatsApp */}
+          <a
+            href={getWhatsAppUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:flex"
+          >
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-5 py-2 text-sm rounded-lg">
               Book Now
             </Button>
-          </Link>
+          </a>
 
           {/* WhatsApp */}
           <a

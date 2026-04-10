@@ -7,16 +7,26 @@ export function cn(...inputs: ClassValue[]) {
 
 export const WHATSAPP_NUMBER = "51922024645";
 
-export const getWhatsAppUrl = (customMessage?: string) => {
-  const defaultMessage = `Hola Black Skyport! 🚗✈️
-Nombre / Name: 
-Fecha / Date: 
-Hora / Time: 
-Pasajeros / Passengers: 
-Maletas / Luggage: 
-Unidad / Vehicle: 
-Servicio / Service: `;
+export const WA_MSG_EN = `Hello, I need a transfer in Lima.
+Pickup: 
+Drop-off: 
+Date: 
+Time: 
+Passengers: `;
 
-  const text = customMessage || defaultMessage;
+export const WA_MSG_ES = `Hola, necesito un traslado en Lima.
+Recojo: 
+Destino: 
+Fecha: 
+Hora: 
+Pasajeros: `;
+
+export const getWhatsAppUrl = (customMessage?: string) => {
+  const text = customMessage || WA_MSG_EN;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+};
+
+export const getWhatsAppUrlEs = (customMessage?: string) => {
+  const text = customMessage || WA_MSG_ES;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 };

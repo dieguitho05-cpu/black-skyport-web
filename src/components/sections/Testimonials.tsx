@@ -3,9 +3,15 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
+    name: "John",
+    country: "🇺🇸 USA",
+    text: "Excellent service, very punctual and safe. Highly recommend Black Skyport to anyone visiting Lima!",
+    rating: 5,
+  },
+  {
     name: "Sarah M.",
     country: "🇺🇸 USA",
-    text: "Excellent service, very punctual and safe. The driver was waiting at arrivals with a sign. Highly recommended!",
+    text: "The driver was waiting at arrivals with a sign. Very professional and comfortable ride. Highly recommended!",
     rating: 5,
   },
   {

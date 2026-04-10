@@ -1,122 +1,150 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { MessageCircle, ChevronDown } from "lucide-react";
-import { getWhatsAppUrl } from "@/lib/utils";
+import { MessageCircle, ChevronDown, Star, Zap } from "lucide-react";
+import { getWhatsAppUrl, WA_MSG_EN } from "@/lib/utils";
+
+const PRICES = [
+  { zone: "Miraflores", usd: "$22", sol: "S/ 75", msg: `Hello, I need a transfer to Miraflores from Lima Airport.\nDate: \nTime: \nPassengers: ` },
+  { zone: "San Isidro", usd: "$22", sol: "S/ 75", msg: `Hello, I need a transfer to San Isidro from Lima Airport.\nDate: \nTime: \nPassengers: ` },
+  { zone: "Barranco",   usd: "$23", sol: "S/ 80", msg: `Hello, I need a transfer to Barranco from Lima Airport.\nDate: \nTime: \nPassengers: ` },
+];
 
 export function Hero() {
   return (
     <section className="relative min-h-[100svh] flex items-center pt-20 overflow-hidden">
-      {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={`${import.meta.env.BASE_URL}images/hero-bg.png`}
-          alt="Luxury transport Lima"
+          alt="Private transport Lima"
           className="w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-50" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* Vehicle image */}
+      <div className="absolute bottom-0 right-0 w-1/2 h-2/3 z-0 hidden lg:block pointer-events-none">
+        <img
+          src={`${import.meta.env.BASE_URL}images/vehicle.png`}
+          alt="Black Skyport luxury vehicle"
+          className="w-full h-full object-contain object-right-bottom opacity-80"
+          style={{ maskImage: "linear-gradient(to left, rgba(0,0,0,0.9) 40%, transparent 100%)" }}
+        />
+      </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <span className="inline-block py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold tracking-wider mb-6">
-              ⚡ LIMITED AVAILABILITY — BOOK IN ADVANCE
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-8">
+        <div className="max-w-3xl mx-auto text-center">
+
+          {/* Urgency badge */}
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-5">
+            <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 text-sm font-bold tracking-wide">
+              <Zap className="w-4 h-4" /> Limited availability — Book in 1 minute
             </span>
           </motion.div>
 
+          {/* H1 */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-7xl font-display font-bold text-white leading-tight mb-3"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.08 }}
+            className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-white leading-tight mb-4"
           >
-            Airport Transfers in Lima ✈️
+            Private Transport &amp; Tours in Lima
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.18 }}
-            className="text-2xl md:text-3xl text-primary italic font-normal mb-4"
+          {/* Services subtitle */}
+          <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.14 }}
+            className="text-lg md:text-xl text-primary font-bold mb-2"
           >
-            Safe, private and reliable service 24/7
+            Airport Transfers • City Rides • Private Tours • Hourly Service
           </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
-            className="text-lg md:text-xl text-foreground/70 mb-10 font-light max-w-2xl mx-auto"
+          <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.19 }}
+            className="text-base text-white/65 mb-1"
           >
-            Arrive in Lima without stress. We'll be waiting for you at the airport.
-            <span className="block text-sm text-muted-foreground mt-1">
-              Llega a Lima sin estrés. Te esperamos en el aeropuerto.
-            </span>
+            Safe • Reliable • English Speaking Driver • Available 24/7
           </motion.p>
 
+          {/* Instant booking line */}
+          <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.23 }}
+            className="text-sm font-semibold text-white/50 mb-1"
+          >
+            Book in 1 minute • Instant confirmation via WhatsApp
+          </motion.p>
+
+          <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.26 }}
+            className="text-xs text-white/30 italic mb-7"
+          >
+            Transporte privado y tours en Lima – Seguro • Puntual • Atención personalizada
+          </motion.p>
+
+          {/* MAIN CTA */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.33 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4"
           >
-            <a href="#book" className="w-full sm:w-auto">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 rounded-xl font-bold text-lg shadow-[0_0_24px_rgba(212,175,55,0.35)] transition-all hover:scale-105"
-              >
-                Book Now
-              </Button>
-            </a>
-
             <a
-              href={getWhatsAppUrl("Hello! I need an airport transfer in Lima. Can you help me?")}
+              href={getWhatsAppUrl(WA_MSG_EN)}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto"
+              className="w-full sm:w-auto flex items-center justify-center gap-3 bg-[#25D366] text-white font-extrabold text-xl px-10 py-5 rounded-2xl shadow-[0_0_40px_rgba(37,211,102,0.5)] hover:bg-[#1ebe5d] hover:scale-105 active:scale-95 transition-all duration-200"
             >
-              <Button
-                size="lg"
-                className="w-full sm:w-auto bg-[#25D366] text-white hover:bg-[#1ebe5d] h-14 px-8 rounded-xl font-bold text-lg gap-2 shadow-[0_0_24px_rgba(37,211,102,0.25)] transition-all hover:scale-105"
-              >
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp
-              </Button>
+              <MessageCircle className="w-7 h-7" />
+              Book Now on WhatsApp
             </a>
-
-            <a href="#pricing" className="w-full sm:w-auto">
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto border-white/20 text-white hover:bg-white/5 h-14 px-8 rounded-xl font-semibold text-lg gap-2 transition-all"
-              >
-                View Prices
-                <ChevronDown className="w-5 h-5" />
-              </Button>
+            <a
+              href="#services"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 border border-white/20 text-white/80 font-semibold text-base px-6 py-5 rounded-2xl hover:bg-white/5 transition-all duration-200"
+            >
+              View Services <ChevronDown className="w-5 h-5" />
             </a>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 mt-14 pt-8 border-t border-white/10 text-sm font-medium text-white/70"
+          {/* Quick response */}
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}
+            className="text-sm text-[#25D366] font-semibold mb-6"
           >
-            <div>⭐ 500+ Happy clients</div>
-            <div className="hidden sm:block text-white/20">•</div>
-            <div>✈️ Flight tracking included</div>
-            <div className="hidden sm:block text-white/20">•</div>
-            <div>🕐 24/7 service</div>
-            <div className="hidden sm:block text-white/20">•</div>
-            <div>🇬🇧 English support</div>
-            <div className="hidden sm:block text-white/20">•</div>
-            <div>✅ Fixed price — no hidden fees</div>
+            ⚡ Quick response on WhatsApp · Usually replies in minutes
+          </motion.p>
+
+          {/* Airport price pills */}
+          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.38 }} className="mb-2">
+            <p className="text-xs text-white/30 uppercase tracking-widest mb-2 font-semibold">
+              ✈️ Airport Transfer — Reference Prices
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {PRICES.map((p) => (
+                <a
+                  key={p.zone}
+                  href={getWhatsAppUrl(p.msg)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-white/5 border border-white/15 hover:border-primary/40 hover:bg-primary/10 text-white px-4 py-2 rounded-xl text-sm font-semibold transition-all"
+                >
+                  📍 {p.zone}
+                  <span className="text-primary font-bold">{p.usd}</span>
+                  <span className="text-white/30 text-xs">{p.sol}</span>
+                </a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Social proof + trust bar */}
+          <motion.div
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.55 }}
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mt-7 pt-6 border-t border-white/10 text-sm font-medium text-white/55"
+          >
+            <span className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />)}
+              <span className="ml-1">5-star service</span>
+            </span>
+            <span className="hidden sm:block text-white/15">·</span>
+            <span>👥 +100 satisfied customers</span>
+            <span className="hidden sm:block text-white/15">·</span>
+            <span>✅ No hidden fees</span>
+            <span className="hidden sm:block text-white/15">·</span>
+            <span>💵 Cash or card</span>
+            <span className="hidden sm:block text-white/15">·</span>
+            <span>🔄 Free cancellation</span>
+            <span className="hidden sm:block text-white/15">·</span>
+            <span>🇺🇸 🇪🇸 English &amp; Spanish support</span>
           </motion.div>
 
         </div>
